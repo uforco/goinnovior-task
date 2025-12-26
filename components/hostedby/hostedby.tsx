@@ -17,8 +17,8 @@ const Hostedby = () => {
 
   return (
     <section className="bg-white relative ">
-      <div className=" absolute top-0 left-0 w-full h-full bg-linear-to-r from-white via-transparent to-white "></div>
-      <div className="max-w-7xl mx-auto px-4  py-10 ">
+      <div className=" absolute top-0 left-0 w-full h-full bg-linear-to-r from-white/90 via-transparent to-white/90 from-25% to-85%  "></div>
+      <div className="max-w-7xl mx-auto px-4  py-8 ">
         <div className="flex items-center justify-between gap-10  ">
           {logos.map((logo, index) => (
             <React.Fragment key={index}>

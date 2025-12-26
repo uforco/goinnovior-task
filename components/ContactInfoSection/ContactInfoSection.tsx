@@ -3,8 +3,8 @@ import { HiOutlineMail } from "react-icons/hi";
 
 export default function ContactInfoSection() {
   return (
-    <section className="w-full bg-white border-b">
-      <div className="mx-auto max-w-7xl px-4 py-6">
+    <section className="w-full bg-white ">
+      <div className="mx-auto max-w-7xl px-4 py-4 pb-2 ">
         <div className="flex flex-col gap-6 md:flex-row md:items-center">
           {/* Location */}
           <div className="flex items-start gap-3">
