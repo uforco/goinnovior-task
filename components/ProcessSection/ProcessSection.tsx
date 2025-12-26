@@ -4,7 +4,7 @@ import dress from "@/public/payment/productshow2.png";
 
 export default function ProcessSection() {
   return (
-    <section className="w-full bg-teal-200/30 py-20 px-4">
+    <section className="w-full bg-[#07B4B0]/30 py-20 px-4">
       <div className="mx-auto max-w-7xl flex justify-between items-center gap-5">
         {/* Left Content */}
         <div className="  ProcessContantBg bg-cover bg-center bg-no-repeat w-full " >
