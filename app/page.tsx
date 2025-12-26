@@ -4,6 +4,7 @@ import { client } from "@/sanity/lib/client";
 import ProcessSection from '../components/ProcessSection/ProcessSection';
 import ProcessSectionCard from "@/components/ProcessSection/ProcessSectionCard";
 import Hostedby from "@/components/hostedby/hostedby";
+import ContactInfoSection from '../components/ContactInfoSection/ContactInfoSection';
 
 export default async function Home() {
   const products = await client.fetch(`*[_type == "product"]{
@@ -18,6 +19,7 @@ export default async function Home() {
 
   return (
     <div >
+      <ContactInfoSection></ContactInfoSection>
       <Hostedby></Hostedby>
       <ProcessSection></ProcessSection>
       <ProcessSectionCard></ProcessSectionCard>
