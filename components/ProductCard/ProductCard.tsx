@@ -9,7 +9,7 @@ import { IoShareSocialOutline } from "react-icons/io5";
 const ProductCard = ({ product }: { product: ProductType }) => {
   console.log(product);
   return (
-    <div style={{ height: '445px' }} className=" w-full overflow-hidden rounded-xl ">
+    <div  className=" w-full h-96 overflow-hidden rounded-xl ">
       <div className="max-w-sm mx-auto  relative group hover:scale-105 cursor-pointer transition-all ease-out duration-150 bg-white rounded-xl overflow-hidden">
         <div className=" absolute group-hover:right-4 -right-40 top-10 z-40 transition-all ease-in-out duration-200 " >
           <ul className=" flex flex-col gap-2 text-xl font-bold text-[#EE4B21] justify-between items-center " >
@@ -25,13 +25,13 @@ const ProductCard = ({ product }: { product: ProductType }) => {
           </ul>
         </div>
         {/* Image Section */}
-        <div className="relative w-full h-52 group-hover:h-72 overflow-hidden rounded-xl transition-all ease-out duration-150  ">
+        <div className="relative w-full h-52 group-hover:h-60 overflow-hidden rounded-xl transition-all ease-out duration-150  ">
           <Image
             src={product.image.asset.url}
-            width={500}
-            height={500}
+            width={300}
+            height={300}
             alt="Woman wearing light blue blazer from back view"
-            className="w-full  object-cover group-hover:mt-0  -mt-7 transition-all ease-out duration-150 "
+            className="w-full  object-cover h-64 transition-all rounded-xl overflow-hidden ease-out duration-150 "
           ></Image>
         </div>
 
