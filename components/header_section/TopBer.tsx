@@ -10,7 +10,7 @@ import {
 
 const TopBar = () => {
   return (
-    <div className="w-full bg-teal-500 text-white text-sm">
+    <div className="w-full bg-teal-500 text-white text-sm px-4 md:px-0 ">
       <div className="max-w-7xl mx-auto  flex flex-col md:flex-row items-center justify-between gap-2">
         {/* Left Section */}
         <div className="flex flex-col sm:flex-row items-center gap-4">
@@ -26,7 +26,7 @@ const TopBar = () => {
         </div>
 
         {/* Right Section - Social Icons */}
-        <div className="flex items-center gap-4 bg-white h-10 px-3 text-lg  ">
+        <div className="flex items-center gap-4 bg-white h-10 w-33.5 text-md justify-around px-2  ">
           <Link href="#" className="hover:text-gray-200 transition text-[#EE4B21] ">
             <FaFacebookF />
           </Link>
