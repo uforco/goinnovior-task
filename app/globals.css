@@ -123,3 +123,10 @@
     @apply bg-background text-foreground;
   }
 }
+
+.ProcessContantBg {
+  background: url('../public/payment/productshow1.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}

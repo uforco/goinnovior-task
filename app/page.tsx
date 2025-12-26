@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { products } from "../sanity/schemaTypes/product";
 import { client } from "@/sanity/lib/client";
+import ProcessSection from '../components/ProcessSection/ProcessSection';
 
 export default async function Home() {
   const products = await client.fetch(`*[_type == "product"]{
@@ -14,6 +15,8 @@ export default async function Home() {
   console.log(JSON.stringify(products, null, 2));
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black"></div>
+    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
+      <ProcessSection></ProcessSection>
+    </div>
   );
 }

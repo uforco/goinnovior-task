@@ -3,7 +3,7 @@ import React from "react";
 import logo from "@/public/WhatsApp_Image_2024-10-05_at_11.43.07_1aaadc00__1___1_-removebg-preview (1) 1.png";
 import AddressAndLinks from "./addressAndLinks";
 import PaymentSection from "./PaymentSection";
-import FooterBottom from './footerBottom';
+import Footerbottom from './footerBottom';
 
 const MainFooterComponent = () => {
   return (
@@ -21,7 +21,7 @@ const MainFooterComponent = () => {
         <PaymentSection></PaymentSection>
 
         {/* Footer Bottom Section */}
-        <FooterBottom></FooterBottom>
+        <Footerbottom></Footerbottom>
       </div>
     </footer>
   );
