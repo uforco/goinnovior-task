@@ -1,50 +1,62 @@
+import { ProductType } from "@/sanity/schemaTypes/product";
 import Image from "next/image";
+import buyicon from "@/public/buyaproducticon.png";
 import React from "react";
+import { IoEyeOutline } from "react-icons/io5";
+import { IoHeartOutline } from "react-icons/io5";
+import { IoShareSocialOutline } from "react-icons/io5";
 
-const ProductCard: React.FC = () => {
+const ProductCard = ({ product }: { product: ProductType }) => {
+  console.log(product);
   return (
-    <div className="max-w-sm mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
-      {/* Image Section */}
-      <div className="relative">
-        {/* <Image
-          src="https://img.freepik.com/premium-photo/collage-group-full-length-portrait-20s-asian-woman-black-short-curl-hair-gray-suit-jacket-pant-shoes-girl-walk-turn-back-view-many-looks-white-background-isolated_121764-3834.jpg"
-          alt="Woman wearing light blue blazer from back view"
-          className="w-full h-auto object-cover"
-        /> */}
-      </div>
+    <div style={{ height: '445px' }} className=" w-full overflow-hidden rounded-xl ">
+      <div className="max-w-sm mx-auto  relative group hover:scale-105 cursor-pointer transition-all ease-out duration-150 bg-white rounded-xl overflow-hidden">
+        <div className=" absolute group-hover:right-4 -right-40 top-10 z-40 transition-all ease-in-out duration-200 " >
+          <ul className=" flex flex-col gap-2 text-xl font-bold text-[#EE4B21] justify-between items-center " >
+            <li className=" bg-white rounded-full p-2 cursor-pointer " >
+              <IoEyeOutline></IoEyeOutline>
+            </li>
+            <li className=" bg-white rounded-full p-2 cursor-pointer " >
+              <IoHeartOutline></IoHeartOutline>
+            </li>
+            <li className=" bg-white rounded-full p-2 cursor-pointer" >
+              <IoShareSocialOutline></IoShareSocialOutline>
+            </li>
+          </ul>
+        </div>
+        {/* Image Section */}
+        <div className="relative w-full h-52 group-hover:h-72 overflow-hidden rounded-xl transition-all ease-out duration-150  ">
+          <Image
+            src={product.image.asset.url}
+            width={500}
+            height={500}
+            alt="Woman wearing light blue blazer from back view"
+            className="w-full  object-cover group-hover:mt-0  -mt-7 transition-all ease-out duration-150 "
+          ></Image>
+        </div>
 
-      {/* Content Section */}
-      <div className="p-6">
-        <h3 className="text-xl font-semibold text-gray-800 mb-4">
-          Woman Apparel
-        </h3>
+        {/* Content Section */}
+        <div className="p-4  pt-2">
+          <h3 className="text-lg font-semibold text-gray-800 ">
+            Woman Apparel
+          </h3>
 
-        <p className="text-2xl font-bold text-gray-900 mb-6">
-          ฿1,000.00 — ฿1,000.00
-        </p>
+          <p className="text-xl font-bold text-gray-900 mb-2">
+            ฿{Number(product.min_price).toFixed(2)} — ฿
+            {Number(product.max_price).toFixed(2)}
+          </p>
 
-        {/* Buttons */}
-        <div className="flex gap-4">
-          <button className="flex-1 bg-white border-2 border-teal-500 text-teal-500 font-medium py-3 px-6 rounded-lg hover:bg-teal-50 transition flex items-center justify-center gap-2">
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-              />
-            </svg>
-            Add To Cart
-          </button>
+          {/* Buttons */}
+          <div className="flex gap-1 justify-between ">
+            <button className=" w-1/2 px-2 text-sm bg-white border-2 border-teal-500 text-teal-500 font-medium rounded-lg hover:bg-teal-50 transition flex items-center justify-center ">
+              <Image src={buyicon} alt="Buy Icon" width={20} height={20} />
+              <p className=" ml-2 ">Add To Cart</p>
+            </button>
 
-          <button className="flex-1 bg-teal-500 text-white font-medium py-3 px-6 rounded-lg hover:bg-teal-600 transition">
-            Buy Now
-          </button>
+            <button className=" w-1/2 bg-teal-500 text-white font-medium py-3 px-6 rounded-lg hover:bg-teal-600 transition">
+              Buy Now
+            </button>
+          </div>
         </div>
       </div>
     </div>

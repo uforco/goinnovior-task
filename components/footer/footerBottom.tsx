@@ -9,7 +9,7 @@ const Footerbottom = () => {
   return (
     <>
       <div className=" w-full h-0.5 my-3 bg-gray-300 "></div>
-      <div className=" flex justify-between items-center ">
+      <div className=" flex md:flex-row flex-col justify-between items-center ">
         <p className="text-sm font-bold ">
           Copyright ©{" "}
           <Link href={""} className=" text-amber-400 ">
@@ -17,7 +17,7 @@ const Footerbottom = () => {
           </Link>{" "}
           All rights reserved.
         </p>
-        <div className=" flex justify-center ">
+        <div className=" flex justify-center  ">
           <Link href="https://facebook.com" className="text-blue-600 mx-3">
             <Image src={FaFacebook} alt='facebook' ></Image>
           </Link>

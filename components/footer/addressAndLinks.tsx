@@ -3,7 +3,7 @@ import React from "react";
 
 const AddressAndLinks = () => {
   return (
-    <div className=" flex justify-between my-3 ">
+    <div className=" flex md:flex-row flex-col justify-between my-3 gap-12 md:gap-1 ">
       <div>
         {/* Contact Section */}
         <div className="">

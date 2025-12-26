@@ -1,4 +1,5 @@
 import { defineField } from "sanity";
+import { client } from "../lib/client";
 
 export const products = {
   type: "document",
@@ -36,4 +37,27 @@ export const products = {
       ],
     }),
   ],
+};
+
+export type ProductType = {
+  _id: string;
+  product_name: string;
+  min_price: number;
+  max_price: number;
+  image: {
+    asset: {
+      url: string;
+    };
+    alt: string;
+  };
+};
+
+export const getProductsApi = async (): Promise<ProductType[]> => {
+  return await client.fetch(`*[_type == "product"][0...4]{
+    _id,
+    product_name,
+    min_price,
+    max_price,
+    image{asset->{ url }, alt }
+    }`);
 };

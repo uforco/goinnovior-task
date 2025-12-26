@@ -7,7 +7,7 @@ import Footerbottom from './footerBottom';
 
 const MainFooterComponent = () => {
   return (
-    <footer className="bg-gray-100 py-10">
+    <footer className="bg-gray-100 py-10 overflow-hidden ">
       <div className=" max-w-7xl mx-auto px-4">
         <div>
           {/* Logo Section */}
