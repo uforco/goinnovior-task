@@ -3,6 +3,7 @@ import { products } from "../sanity/schemaTypes/product";
 import { client } from "@/sanity/lib/client";
 import ProcessSection from '../components/ProcessSection/ProcessSection';
 import ProcessSectionCard from "@/components/ProcessSection/ProcessSectionCard";
+import Hostedby from "@/components/hostedby/hostedby";
 
 export default async function Home() {
   const products = await client.fetch(`*[_type == "product"]{
@@ -17,6 +18,7 @@ export default async function Home() {
 
   return (
     <div >
+      <Hostedby></Hostedby>
       <ProcessSection></ProcessSection>
       <ProcessSectionCard></ProcessSectionCard>
     </div>
