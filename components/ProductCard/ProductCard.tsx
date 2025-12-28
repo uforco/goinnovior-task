@@ -1,13 +1,14 @@
 import { ProductType } from "@/sanity/schemaTypes/product";
 import Image from "next/image";
-import buyicon from "@/public/buyaproducticon.png";
+
 import React from "react";
 import { IoEyeOutline } from "react-icons/io5";
 import { IoHeartOutline } from "react-icons/io5";
 import { IoShareSocialOutline } from "react-icons/io5";
+import AddToCardBtn from "./AddToCardBtn";
 
 const ProductCard = ({ product }: { product: ProductType }) => {
-  // console.log(product);
+  console.log(product);
   return (
     <div  className=" w-full h-96 overflow-hidden rounded-xl ">
       <div className="max-w-sm mx-auto  relative group hover:scale-105 cursor-pointer transition-all ease-out duration-150 bg-white rounded-xl overflow-hidden">
@@ -48,10 +49,7 @@ const ProductCard = ({ product }: { product: ProductType }) => {
 
           {/* Buttons */}
           <div className="flex gap-1 justify-between ">
-            <button className=" w-1/2 px-2 text-sm bg-white border-2 border-teal-500 text-teal-500 font-medium rounded-lg hover:bg-teal-50 transition flex items-center justify-center ">
-              <Image src={buyicon} alt="Buy Icon" width={20} height={20} />
-              <p className=" ml-2 ">Add To Cart</p>
-            </button>
+            <AddToCardBtn projectId={product._id}></AddToCardBtn>
 
             <button className=" w-1/2 bg-teal-500 text-white font-medium py-3 px-6 rounded-lg hover:bg-teal-600 transition">
               Buy Now

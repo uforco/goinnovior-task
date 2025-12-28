@@ -4,14 +4,28 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 import logo from "@/public/WhatsApp_Image_2024-10-05_at_11.43.07_1aaadc00__1___1_-removebg-preview (1) 1.png";
 import Link from "next/link";
 import ProfileImage from "./profileImage";
-import { useSelector } from "react-redux";
-import { selectAccount } from "@/redux/features/profile";
+import { useDispatch, useSelector } from "react-redux";
+import { removeAccount, selectAccount } from "@/redux/features/profile";
 import CardList from "./CardList";
 
 const Navbar = () => {
   const profile = useSelector(selectAccount);
 
-  console.log(profile);
+  const dispatch = useDispatch();
+
+  const logout = async () => {
+    const result = await fetch(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/logout`,
+      { credentials: "include" }
+    );
+    console.log(result);
+    if (!result.ok) {
+      alert("Failed to logout");
+      return;
+    }
+    dispatch(removeAccount());
+    alert("Logged out successfully");
+  };
 
   return (
     <header className="w-full bg-white shadow px-4 md:px-2 xl:px-0 ">
@@ -53,8 +67,8 @@ const Navbar = () => {
 
             {/* Account */}
             <div className="hidden sm:flex items-center gap-1 cursor-pointer text-gray-700 hover:text-orange-500">
-              <span>Your Account</span>
               {profile ? <ProfileImage url={profile?.image || ""} /> : ""}
+              <span>Your Account</span>
             </div>
 
             {/* Contact Button */}
@@ -64,6 +78,8 @@ const Navbar = () => {
             >
               Contact Us
             </Link>
+
+            {profile && <button onClick={logout}>logOut</button>}
           </div>
         </div>
       </div>
