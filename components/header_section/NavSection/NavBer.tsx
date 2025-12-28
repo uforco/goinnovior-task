@@ -1,10 +1,18 @@
+"use client";
 import Image from "next/image";
-import { FaShoppingCart, FaUser } from "react-icons/fa";
 import { MdKeyboardArrowDown } from "react-icons/md";
-import logo from "@/public/WhatsApp_Image_2024-10-05_at_11.43.07_1aaadc00__1___1_-removebg-preview (1) 1.png"
+import logo from "@/public/WhatsApp_Image_2024-10-05_at_11.43.07_1aaadc00__1___1_-removebg-preview (1) 1.png";
 import Link from "next/link";
+import ProfileImage from "./profileImage";
+import { useSelector } from "react-redux";
+import { selectAccount } from "@/redux/features/profile";
+import CardList from "./CardList";
 
 const Navbar = () => {
+  const profile = useSelector(selectAccount);
+
+  console.log(profile);
+
   return (
     <header className="w-full bg-white shadow px-4 md:px-2 xl:px-0 ">
       <div className="max-w-7xl mx-auto px-0">
@@ -41,18 +49,12 @@ const Navbar = () => {
           {/* Right Section */}
           <div className="flex items-center gap-6">
             {/* Cart */}
-            <div className="relative flex items-center gap-1 cursor-pointer text-gray-700 hover:text-orange-500">
-              <FaShoppingCart />
-              <span>Cart</span>
-              <span className="absolute -top-2 -right-3 bg-orange-500 text-white text-xs rounded-full px-1">
-                0
-              </span>
-            </div>
+            <CardList></CardList>
 
             {/* Account */}
             <div className="hidden sm:flex items-center gap-1 cursor-pointer text-gray-700 hover:text-orange-500">
-              <FaUser />
               <span>Your Account</span>
+              {profile ? <ProfileImage url={profile?.image || ""} /> : ""}
             </div>
 
             {/* Contact Button */}
