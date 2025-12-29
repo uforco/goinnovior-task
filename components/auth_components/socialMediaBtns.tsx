@@ -5,7 +5,7 @@ import Image from "next/image";
 import facebook from "@/public/facebookLogin.png";
 import apple from "@/public/appleLogin.png";
 import google from "@/public/googleLogin.png";
-import Link from "next/link";
+import { VscGithubInverted } from "react-icons/vsc";
 
 const SocialMediaBtns = () => {
   const wipClass =
@@ -32,25 +32,28 @@ const SocialMediaBtns = () => {
     // console.log(process.env.NEXT_PUBLIC_BACKEND_URL);
   };
 
-  const testCookies = async () => {
-    const test = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/me`, {
-      method: "GET",
-      credentials: "include",
-    });
-    const data = await test.json();
-    console.log(data);
-  };
+  // const testCookies = async () => {
+  //   const test = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/me`, {
+  //     method: "GET",
+  //     credentials: "include",
+  //   });
+  //   const data = await test.json();
+  //   console.log(data);
+  // };
 
   return (
     <div className={wipClass}>
-      <Button onClick={googleLogin} className={`${btnClass} border-2 border-black`}>
+      <Button
+        onClick={googleLogin}
+        className={`${btnClass} border-2 border-black`}
+      >
         <Image className=" size-7 " src={google} alt=""></Image>
       </Button>
-      <Button className={`${btnClass} `}>
+      <Button onClick={facebookLogin} className={`${btnClass} `}>
         <Image className=" size-7 " src={facebook} alt=""></Image>
       </Button>
-      <Button className={btnClass}>
-        <Image className=" size-7 " src={apple} alt=""></Image>
+      <Button onClick={githubLogin} className={`${btnClass} text-black `}>
+        <VscGithubInverted className=" size-7 "></VscGithubInverted>
       </Button>
     </div>
   );
