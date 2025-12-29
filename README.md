@@ -19,7 +19,7 @@ The application is fully **Dockerized** and deployed using an automated **CI/CD 
   <p>
     <img src="https://nestjs.com/img/logo-small.svg" width="20" alt="Nest Logo" />
   </p>
-  <a hraf='https://github.com/uforco/goinnovior-server' >back end Documents - GO</a>
+  <a href='https://github.com/uforco/goinnovior-server' target="_blank" >back end Documents - GO</a>
   <p>
 </div>
 
