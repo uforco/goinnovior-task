@@ -8,7 +8,7 @@ import { IoShareSocialOutline } from "react-icons/io5";
 import AddToCardBtn from "./AddToCardBtn";
 
 const ProductCard = ({ product }: { product: ProductType }) => {
-  console.log(product);
+  // console.log(product);
   return (
     <div  className=" w-full h-96 overflow-hidden rounded-xl ">
       <div className="max-w-sm mx-auto  relative group hover:scale-105 cursor-pointer transition-all ease-out duration-150 bg-white rounded-xl overflow-hidden">

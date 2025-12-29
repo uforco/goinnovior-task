@@ -1,10 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store";
+import { fetchCartQty } from "../asyncThunk/cardQty";
 
 export interface ProfileState {
   account: { id: number; name: string; email: string; image: string } | null;
-  addtocard: 0;
+  addtocard: number;
 }
 
 const initialState: ProfileState = {
@@ -35,6 +36,18 @@ export const profileSlice = createSlice({
     ) => {
       state.addtocard -= action.payload;
     },
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchCartQty.pending, (state) => {
+        state.addtocard = 0;
+      })
+      .addCase(fetchCartQty.fulfilled, (state, action) => {
+        state.addtocard = Number(action.payload.quantity) || 0;
+      })
+      .addCase(fetchCartQty.rejected, (state) => {
+        state.addtocard = 0;
+      });
   },
 });
 

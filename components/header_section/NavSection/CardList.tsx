@@ -1,11 +1,18 @@
 "use client";
+import { fetchCartQty } from "@/redux/asyncThunk/cardQty";
 import { selectCard } from "@/redux/features/profile";
-import React from "react";
+import { AppDispatch } from "@/redux/store";
+import React, { useEffect } from "react";
 import { FaShoppingCart } from "react-icons/fa";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const CardList = () => {
   const count = useSelector(selectCard);
+  const dispatch = useDispatch<AppDispatch>();
+
+  useEffect(() => {
+    dispatch(fetchCartQty());
+  }, [dispatch]);
 
   return (
     <div className="relative flex items-center gap-1 cursor-pointer text-gray-700 hover:text-orange-500">

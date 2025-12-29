@@ -3,10 +3,11 @@ import React from "react";
 import buyicon from "@/public/buyaproducticon.png";
 import Image from "next/image";
 import { useDispatch } from "react-redux";
-import { incrementCard } from "@/redux/features/profile";
+import { fetchCartQty } from "@/redux/asyncThunk/cardQty";
+import { AppDispatch } from "@/redux/store";
 const AddToCardBtn = ({ projectId }: { projectId: string }) => {
 
-    const dispatch = useDispatch()
+    const dispatch = useDispatch<AppDispatch>();
 
 
   const addCard = async () => {
@@ -37,7 +38,7 @@ const AddToCardBtn = ({ projectId }: { projectId: string }) => {
     }
     const data = await result.json();
     console.log(data);
-    dispatch(incrementCard(data.quantity));
+    dispatch(fetchCartQty());
     alert("Product added to cart successfully!");
   };
 

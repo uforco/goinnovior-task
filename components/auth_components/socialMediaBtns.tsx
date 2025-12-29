@@ -3,7 +3,6 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import facebook from "@/public/facebookLogin.png";
-import apple from "@/public/appleLogin.png";
 import google from "@/public/googleLogin.png";
 import { VscGithubInverted } from "react-icons/vsc";
 

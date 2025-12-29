@@ -24,7 +24,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
 
-  console.log(process.env.NODE_ENV);
+  // console.log(process.env.NODE_ENV);
 
 
   return (
