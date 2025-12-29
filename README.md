@@ -1,3 +1,19 @@
+<div style="display: flex; gap: 12px; align-items: center;">
+  <p>
+    <a href="http://nestjs.com/" target="_blank">
+      <img src="https://i.ibb.co.com/ym2fVns4/icons8-next-js-144.png" width="60" alt="Nest Logo" />
+    </a>
+  </p>
+  <p style="font-size: 80px; margin-left: 10px " >+<p>
+  <p>
+    <a href="http://nestjs.com/" target="_blank">
+      <img src="https://nestjs.com/img/logo-small.svg" width="70" alt="Nest Logo" />
+    </a>
+  </p>
+</div>
+
+# <p style="font-size: 40px; margin-left: 10px " >Goinnovior Task<p>
+
 # Frontend Application – Next.js, Redux & Sanity CMS
 
 A modern frontend web application built with **Next.js** and **Redux**, powered by **Sanity CMS** for content management.  
@@ -5,18 +21,44 @@ The application is fully **Dockerized** and deployed using an automated **CI/CD 
 
 ---
 
-## 🚀 Tech Stack
+<p style="font-size: 30px;" >🚀 Tech Stack </p>
+<div style="display: flex; gap: 12px; align-items: center;">
+  <p>
+    <a href="http://nestjs.com/" target="_blank">
+      <img src="https://nestjs.com/img/logo-small.svg" width="40" alt="Nest Logo" />
+    </a>
+  </p>
+  <p style="font-size: 25px; margin-left: 3px; margin-top: -13px " >
+  <a hraf='https://github.com/uforco/goinnovior-server' >back end Documents - GO</a>
+  <p>
+</div>
 
-### Frontend
+# Frontend
+
 - **Next.js** – React framework for production
 - **Redux** – State management
 - **TypeScript** – Type safety (if enabled)
 - **Tailwind CSS / CSS Modules** – Styling (optional)
 
-### CMS
-- **Sanity CMS** – Headless content management
+# CMS
+
+- ## **Sanity CMS** – Headless content management
+- ### **_Sanity CMS - Admin Dashboard : Url_** - `https://goinnovior-task.vercel.app/admin`
+
+## 🧠 Sanity CMS Integration
+
+- Headless CMS for managing dynamic content
+- Content fetched using GROQ queries
+- Real-time content updates (optional)
+
+Example usage:
+
+```ts
+client.fetch(`*[_type == "post"]{ title, slug }`);
+```
 
 ### DevOps
+
 - **Docker** – Containerization
 - **GitHub Actions** – CI/CD pipeline
 
@@ -34,6 +76,7 @@ The application is fully **Dockerized** and deployed using an automated **CI/CD 
 ---
 
 ## 🧩 Project Structure
+
 ```
    ./
     ├─ app/ # Next.js routing
@@ -44,6 +87,7 @@ The application is fully **Dockerized** and deployed using an automated **CI/CD 
     └─ sanity/ # Sanity client & queries
 
 ```
+
 ---
 
 ## 🔄 State Management (Redux)
@@ -54,20 +98,10 @@ The application is fully **Dockerized** and deployed using an automated **CI/CD 
 
 ---
 
-## 🧠 Sanity CMS Integration
-
-- Headless CMS for managing dynamic content
-- Content fetched using GROQ queries
-- Real-time content updates (optional)
-
-Example usage:
-```ts
-client.fetch(`*[_type == "post"]{ title, slug }`)
-```
-
 ### ⚙️ Environment Variables
 
 Create a .env.local file in the project root:
+
 ```ENV
 NEXT_PUBLIC_SANITY_PROJECT_ID=''
 NEXT_PUBLIC_SANITY_DATASET=''
