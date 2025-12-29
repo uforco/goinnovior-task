@@ -5,7 +5,6 @@ import Image from "next/image";
 import facebook from "@/public/facebookLogin.png";
 import apple from "@/public/appleLogin.png";
 import google from "@/public/googleLogin.png";
-
 import Link from "next/link";
 
 const SocialMediaBtns = () => {
@@ -20,17 +19,38 @@ const SocialMediaBtns = () => {
   //   if (result?.ok) router.push("/"); dev-h6pe2hhoj2lwc1ek
   // };
 
+  const googleLogin = () => {
+    window.location.href = `${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/google/login`;
+    // console.log(process.env.NEXT_PUBLIC_BACKEND_URL);
+  };
+  const githubLogin = () => {
+    window.location.href = `${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/github/login`;
+    // console.log(process.env.NEXT_PUBLIC_BACKEND_URL);
+  };
+  const facebookLogin = () => {
+    window.location.href = `${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/facebook/login`;
+    // console.log(process.env.NEXT_PUBLIC_BACKEND_URL);
+  };
+
+  const testCookies = async () => {
+    const test = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/me`, {
+      method: "GET",
+      credentials: "include",
+    });
+    const data = await test.json();
+    console.log(data);
+  };
+
   return (
     <div className={wipClass}>
-      <Link href={"/auth/login?connection=google"}>Login</Link>
+      <Button onClick={googleLogin} className={`${btnClass} border-2 border-black`}>
+        <Image className=" size-7 " src={google} alt=""></Image>
+      </Button>
       <Button className={`${btnClass} `}>
         <Image className=" size-7 " src={facebook} alt=""></Image>
       </Button>
       <Button className={btnClass}>
         <Image className=" size-7 " src={apple} alt=""></Image>
-      </Button>
-      <Button className={btnClass}>
-        <Image className=" size-7 " src={google} alt=""></Image>
       </Button>
     </div>
   );
