@@ -16,9 +16,7 @@ The application is fully **Dockerized** and deployed using an automated **CI/CD 
 
 <p style="font-size: 30px;" >🚀 Tech Stack </p>
 <div style="display: flex; gap: 12px; align-items: center;">
-  <p>
-    <img src="https://nestjs.com/img/logo-small.svg" width="20" alt="Nest Logo" />
-  </p>
+  <img src="https://nestjs.com/img/logo-small.svg" width="20" alt="Nest Logo" />
   <a href='https://github.com/uforco/goinnovior-server' target="_blank" >back end Documents - GO</a>
   <p>
 </div>
