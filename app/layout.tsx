@@ -23,6 +23,10 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  console.log(process.env.NODE_ENV);
+
+
   return (
     <html lang="en">
       <body
