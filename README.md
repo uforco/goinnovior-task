@@ -1,18 +1,11 @@
-<div style="display: flex; gap: 12px; align-items: center;">
-  <p>
-    <a href="http://nestjs.com/" target="_blank">
-      <img src="https://i.ibb.co.com/ym2fVns4/icons8-next-js-144.png" width="60" alt="Nest Logo" />
-    </a>
-  </p>
-  <p style="font-size: 80px; margin-left: 10px " >+<p>
-  <p>
-    <a href="http://nestjs.com/" target="_blank">
-      <img src="https://nestjs.com/img/logo-small.svg" width="70" alt="Nest Logo" />
-    </a>
-  </p>
-</div>
 
 # <p style="font-size: 40px; margin-left: 10px " >Goinnovior Task<p>
+
+<div style="display: flex; gap: 12px; align-items: center;">
+    <img src="https://i.ibb.co.com/ym2fVns4/icons8-next-js-144.png" width="60" alt="Nest Logo" />
+    <img src="https://nestjs.com/img/logo-small.svg" width="70" alt="Nest Logo" />
+</div>
+
 
 # Frontend Application – Next.js, Redux & Sanity CMS
 
@@ -24,11 +17,8 @@ The application is fully **Dockerized** and deployed using an automated **CI/CD 
 <p style="font-size: 30px;" >🚀 Tech Stack </p>
 <div style="display: flex; gap: 12px; align-items: center;">
   <p>
-    <a href="http://nestjs.com/" target="_blank">
-      <img src="https://nestjs.com/img/logo-small.svg" width="40" alt="Nest Logo" />
-    </a>
+    <img src="https://nestjs.com/img/logo-small.svg" width="20" alt="Nest Logo" />
   </p>
-  <p style="font-size: 25px; margin-left: 3px; margin-top: -13px " >
   <a hraf='https://github.com/uforco/goinnovior-server' >back end Documents - GO</a>
   <p>
 </div>
