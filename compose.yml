@@ -1,0 +1,73 @@
+services:
+  db:
+    image: postgres:16
+    container_name: goinnovior_db
+    restart: always
+    profiles:
+      - dev
+      - prod
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: db_name
+    ports:
+      - '5437:5432'
+
+  frontend:
+    platform: linux/amd64
+    image: sharif780/frontendgoinnovior:latest
+    container_name: goinnovior_app
+    ports:
+      - '3001:3000'
+    profiles:
+      - app
+    environment:
+      NEXT_PUBLIC_SANITY_API_VERSION: '2025-12-23'
+      NEXT_PUBLIC_SANITY_DATASET: 'production'
+      NEXT_PUBLIC_SANITY_PROJECT_ID: '9yb41zmv'
+      #github Credentials
+      GITHUB_ID: 'Ov23liuneVCAs2gmM7Cb'
+      GITHUB_SECRET: '4e8a89d84d2c3b86a25f9e2131b6982e9423fa5c'
+      #google Credentials
+      GOOGLE_CLIENT_ID: '250637026654-r6btqpsj1qve7ivha2t1ghm9h9orloh8.apps.googleusercontent.com'
+      GOOGLE_CLIENT_SECRET: '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'
+      # URL
+      NEXT_PUBLIC_FRONTEND_URL: 'http://localhost:3001'
+      NEXT_PUBLIC_BACKEND_URL: 'http://localhost:3000'
+      # Nest config
+      NEXT_TELEMETRY_DISABLED: 1
+    depends_on:
+      - db
+      - backend
+  
+  backend:
+    platform: linux/amd64
+    image: sharif780/backendgoinnovior:latest
+    container_name: goinnovior_server
+    ports:
+      - '3000:3000'
+    profiles:
+      - build
+      - prod
+    environment:
+      NODE_ENV: 'production'
+      PORT: 3000
+      HOST: 0.0.0.0
+      # Database config
+      DB_USER: postgres
+      DB_PASSWORD: password
+      DB_NAME: db_name
+      DB_HOST: db
+      DB_PORT: 5437
+      DATABASE_URL: postgresql://postgres:password@db:5432/db_name
+      # DATABASE_URL: postgresql://postgres:password@10.10.10.65:5434/db_name?schema=public
+      # JWT Secret
+      JWT_SECRET: your_jwt_secret_key_here
+      # Google OAuth Credentials
+      GOOGLE_CLIENT_ID: 250637026654-r6btqpsj1qve7ivha2t1ghm9h9orloh8.apps.googleusercontent.com
+      GOOGLE_CLIENT_SECRET: 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
+      # URL
+      FORTEND_URL: http://localhost:3001
+      BACKEND_URL: http://localhost:3000
+    depends_on:
+      - db
